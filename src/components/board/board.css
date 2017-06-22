@@ -1,0 +1,12 @@
+#statement{
+    margin-bottom: 10px;
+    
+}
+
+.board_wrapper{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    background-color: #fff;
+    color: #444;
+}
+
