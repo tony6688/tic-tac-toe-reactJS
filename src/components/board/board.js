@@ -12,9 +12,7 @@ class Board extends Component {
             nextPlayer:true,
             tie:0
         }
-
     }
-
     handleClick(i){
         var temp_board = this.state.board.slice(); //Immutate
 
