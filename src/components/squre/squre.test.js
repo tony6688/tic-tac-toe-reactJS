@@ -34,10 +34,9 @@ it('check the move of Player Y', () =>{
 it('move is being made by play X when a squre is clicked', () => {
   var props = {
     player:null
-  }
+  };
   const mockFn = jest.fn(() => {
       props.player = "X";
-      console.log(props.player);
     });
    
   const squre = shallow(

@@ -13,13 +13,12 @@ class Board extends Component {
             tie:0
         }
     }
-    handleClick(i){
-        var temp_board = this.state.board.slice(); //Immutate
 
+    handleClick(i){
+        const temp_board = this.state.board.slice(); //Immutate
         if (temp_board[i] || this.checkForWinner(this.state.board)){
             return;
         }
-        
         temp_board[i] = this.state.nextPlayer ? "X" : "O";
         this.setState({
             board: temp_board,
@@ -39,9 +38,8 @@ class Board extends Component {
             [0,4,8],
             [2,4,6]
         ];
-        for (var i = 0; i < lines.length; i++){
-            var [a,b,c] = lines[i];
-            
+        for (let i = 0; i < lines.length; i++){
+            const [a,b,c] = lines[i];
             if (board[a] && board[a] === board[b] && board[a] === board[c]){
                 console.log(board);
                 return board[a];
@@ -49,11 +47,12 @@ class Board extends Component {
         }
         return null;
     }
+
     renderSqure(i){
         return <Squre player={this.state.board[i]} onClick={()=>this.handleClick(i)}/>
     }
     render() {
-        var winner = this.checkForWinner(this.state.board);
+        const winner = this.checkForWinner(this.state.board);
         if (winner){
             var statement = "Winner is  " + winner + "!"
         }else if(this.state.tie ===9){
@@ -64,9 +63,7 @@ class Board extends Component {
         return (
             <div>
                 <div id="statement">{statement}</div>
-
                 <div className="board_wrapper">
-                
                     <div>
                         {this.renderSqure(0)}
                         {this.renderSqure(1)}

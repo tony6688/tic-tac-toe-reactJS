@@ -9,13 +9,36 @@ it('renders without crashing', () => {
   ReactDOM.render(<Board />, div);
 });
 
+it('check for all squre exist', () => {
+  const board = shallow(
+    <Board />
+  );
+  const mockFn = jest.fn(() => {
+      return board.find('Squre').length;
+  });
+  expect(mockFn()).toBe(9);
+});
+
+it('check for starting statement', () => {
+  const board = shallow(<Board />);
+  expect(board.find('#statement').text()).toEqual('Next: X');
+});
+
 
 // it('move is being made by play X when a squre is clicked', () => {
-  
 //   const board = shallow(
 //     <Board />
 //   );
-//   board.find('Squre').at(1).simulate('click');
-//   expect(board.find('Squre').at(1).text()).toEqual('X');
+
+//   console.log(Board.checkForWinner;
+//   // const squre0 = board.find('Squre').at(0);
+//   // const squre1 = board.find('Squre').at(1);
+//   // const squre2 = board.find('Squre').at(2);
+//   // const squre3 = board.find('Squre').at(3);
+//   // const squre4 = board.find('Squre').at(4);
+//   // const squre5 = board.find('Squre').at(5);
+//   // const squre6 = board.find('Squre').at(6);
+//   // const squre7 = board.find('Squre').at(7);
+//   // const squre8 = board.find('Squre').at(8);
 // });
 
